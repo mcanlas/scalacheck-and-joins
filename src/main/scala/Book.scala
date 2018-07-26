@@ -1,1 +1,1 @@
-case class Book(title: String, author: Int)
+case class Book(title: String, authorId: Int)
