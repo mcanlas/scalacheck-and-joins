@@ -33,6 +33,10 @@ class Storage[F[_] : Sync] {
    * Where none the second part specifically does not satisfy for the `K` given in the first part.
    *
    * Where all the A can be stacked monadically
+   *
+   * --
+   *
+   * If there are no domain keys/uniqueness, all `A` are independent. The only thing that needs orchestration is the `K` that are generated, which should probably demand some sort of `Equality`.
    * @return
    */
   def selectOne = ???
