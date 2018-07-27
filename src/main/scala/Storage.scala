@@ -13,6 +13,8 @@ class Storage[F[_] : Sync] {
   private val books   = collection.mutable.Map.empty[Int, Book]
   private val authors = collection.mutable.Map.empty[Int, Author]
 
+  def selectOne = ???
+
   def selectOneToMany(authorId: Int): F[List[(Author, Book)]] =
     Sync[F].delay {
       for {
@@ -20,6 +22,8 @@ class Storage[F[_] : Sync] {
           (_, b) <- books.toList.filter(_._2.authorId == aid)
       } yield (a, b)
     }
+
+  def selectManyToMany = ???
 
   def addBook(book: Book): F[Unit] =
     Sync[F].delay {
