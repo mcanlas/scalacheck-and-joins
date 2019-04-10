@@ -48,6 +48,8 @@ class Storage[F[_]: Sync] {
     */
   def selectOneToMany(authorId: Int): F[List[(Author, Book)]] =
     Sync[F].delay {
+      val _ = authorId
+
       for {
         (aid, a) <- authors.toList
         (_, b)   <- books.toList.filter(_._2.authorId == aid)
