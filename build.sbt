@@ -1,4 +1,4 @@
-scalaVersion := "2.12.11"
+scalaVersion := "2.12.12"
 
 libraryDependencies += "org.typelevel"  %% "cats-effect" % "2.1.3"
 libraryDependencies += "org.scalatest"  %% "scalatest"   % "3.1.2" % "test"
